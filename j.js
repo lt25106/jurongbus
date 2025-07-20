@@ -43,8 +43,8 @@ const busdata = await fetch("https://arrivelah2.busrouter.sg/?id=28009")
     if ([334,506,66,993].includes(Number(element.no))) {
       tbody.innerHTML += `
       <td>${element.no}</td>
-      <td>${element.next && element.next.time ? element.next.time.slice(11,16) : ""}</td>
-      <td>${element.next2 && element.next2.time ? element.next2.time.slice(11,16) : ""}</td>
+      <td>${element.next?.time ? element.next.time.slice(11,16) : ""}</td>
+      <td>${element.next2?.time ? element.next2.time.slice(11,16) : ""}</td>
       `
     }
   });
