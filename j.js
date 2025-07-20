@@ -28,7 +28,7 @@ const tbody = document.querySelector("tbody");
  * @property {BusTiming} next - Information on the next bus
  * @property {BusTiming} subsequent - Information on the subsequent bus
  * @property {BusTiming} next2 - Same as `subsequent`, may be a duplicate
- * @property {BusTiming|null} next3 - Information on the third bus (may be null)
+ * @property {BusTiming} next3 - Information on the third bus (may be null)
  */
 
 /**
