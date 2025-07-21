@@ -45,6 +45,7 @@ const busdata = await fetch("https://arrivelah2.busrouter.sg/?id=28009")
       <td>${element.no}</td>
       <td>${element.next?.time ? element.next.time.slice(11,16) : ""}</td>
       <td>${element.next2?.time ? element.next2.time.slice(11,16) : ""}</td>
+      <td>${element.next3?.time ? element.next3.time.slice(11,16) : ""}</td>
       `
     }
   });
