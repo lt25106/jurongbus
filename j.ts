@@ -1,12 +1,11 @@
 interface Busdata {
-  services: Array[];
-}
-interface Array {
-  no: number;
-  operator: string;
-  next?: Next;
-  next2?: Next;
-  next3?: Next;
+  services: {
+    no: number;
+    operator: string;
+    next?: Next;
+    next2?: Next;
+    next3?: Next;
+  }[];
 }
 interface Next {
   destination_code: string;
@@ -15,7 +14,7 @@ interface Next {
   lat: number;
   lng: number;
   load: string;
-  monitored: 0 | 1;
+  monitored: number;
   origin_code: string;
   time: string; // ISO 8601 format
   type: string;
