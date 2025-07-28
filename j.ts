@@ -27,7 +27,7 @@ await fetch("https://arrivelah2.busrouter.sg/?id=28009")
 .then((data:Busdata) => {
   console.log(data);
   data.services.forEach(element => {
-    if ([334,506,66,993].includes(Number(element.no))) {
+    if ([334,506,66,993].includes(+element.no)) {
       tblebdy.innerHTML += `
       <tr>
         <td>${element.no}</td>
