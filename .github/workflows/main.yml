@@ -1,16 +1,34 @@
-on: [push]
+name: Build and Minify
+
+on:
+  push:
+    branches: [main]
 
 jobs:
-  minify:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: check out the repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: auto minify the files
-        uses: nizarmah/auto-minify@v3
-
-      - name: auto commit the minified files
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          commit_message: "bot: Add auto minified files"
+          node-version: 20
+
+      - name: Install esbuild
+        run: npm install --global esbuild
+
+      - name: Build and Minify with esbuild
+        run: |
+          esbuild src/index.ts \
+            --bundle \
+            --minify \
+            --outfile=docs/app.js \
+            --format=esm
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
