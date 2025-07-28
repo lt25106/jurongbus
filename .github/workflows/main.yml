@@ -21,11 +21,7 @@ jobs:
 
       - name: Build and Minify with esbuild
         run: |
-          esbuild src/index.ts \
-            --bundle \
-            --minify \
-            --outfile=docs/app.js \
-            --format=esm
+          esbuild j.js --minify
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
