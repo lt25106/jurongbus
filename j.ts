@@ -38,8 +38,7 @@ await fetch("https://arrivelah2.busrouter.sg/?id=28009")
       `
     }
   });
-})
-console.log("change")
+});
 const libtable = document.getElementById("lib") as HTMLTableSectionElement;
 await fetch("https://arrivelah2.busrouter.sg/?id=28241")
 .then(response => response.json())
