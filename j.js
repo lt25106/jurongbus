@@ -1,36 +1,15 @@
-const intable = document.getElementById("int");
-await fetch("https://arrivelah2.busrouter.sg/?id=28009")
-    .then(response => response.json())
-    .then((data) => {
-    // console.log(data);
-    data.services.forEach(element => {
-        if ([334, 506, 66, 993].includes(+element.no)) {
-            intable.innerHTML += `
+var e=document.getElementById("int");await fetch("https://arrivelah2.busrouter.sg/?id=28009").then(i=>i.json()).then(i=>{i.services.forEach(t=>{[334,506,66,993].includes(+t.no)&&(e.innerHTML+=`
       <tr>
-        <td>${element.no}</td>
-        <td>${element.next?.time ? element.next.time.slice(11, 16) : ""}</td>
-        <td>${element.next2?.time ? element.next2.time.slice(11, 16) : ""}</td>
-        <td>${element.next3?.time ? element.next3.time.slice(11, 16) : ""}</td>
+        <td>${t.no}</td>
+        <td>${t.next?.time?t.next.time.slice(11,16):""}</td>
+        <td>${t.next2?.time?t.next2.time.slice(11,16):""}</td>
+        <td>${t.next3?.time?t.next3.time.slice(11,16):""}</td>
       </tr>
-      `;
-        }
-    });
-});
-const libtable = document.getElementById("lib");
-await fetch("https://arrivelah2.busrouter.sg/?id=28241")
-    .then(response => response.json())
-    .then((data) => {
-    data.services.forEach(element => {
-        if ([178, 198].includes(+element.no)) {
-            libtable.innerHTML += `
+      `)})});var n=document.getElementById("lib");await fetch("https://arrivelah2.busrouter.sg/?id=28241").then(i=>i.json()).then(i=>{i.services.forEach(t=>{[178,198].includes(+t.no)&&(n.innerHTML+=`
       <tr>
-        <td>${element.no}</td>
-        <td>${element.next?.time ? element.next.time.slice(11, 16) : ""}</td>
-        <td>${element.next2?.time ? element.next2.time.slice(11, 16) : ""}</td>
-        <td>${element.next3?.time ? element.next3.time.slice(11, 16) : ""}</td>
+        <td>${t.no}</td>
+        <td>${t.next?.time?t.next.time.slice(11,16):""}</td>
+        <td>${t.next2?.time?t.next2.time.slice(11,16):""}</td>
+        <td>${t.next3?.time?t.next3.time.slice(11,16):""}</td>
       </tr>
-      `;
-        }
-    });
-});
-export {};
+      `)})});
