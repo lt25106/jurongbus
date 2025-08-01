@@ -56,3 +56,5 @@ await fetch("https://arrivelah2.busrouter.sg/?id=28241")
     }
   })
 })
+
+export {}
