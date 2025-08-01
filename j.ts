@@ -22,6 +22,7 @@ interface Next {
 }
 
 const intable = document.getElementById("int") as HTMLTableSectionElement;
+
 await fetch("https://arrivelah2.busrouter.sg/?id=28009")
 .then(response => response.json())
 .then((data:Busdata) => {
