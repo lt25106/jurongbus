@@ -1,3 +1,4 @@
+//esbuild j.ts --minify --format=esm --outfile=j.js
 interface Busdata {
   services: {
     no: number;
