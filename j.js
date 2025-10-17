@@ -1,4 +1,4 @@
-const e=document.getElementById("int");await fetch("https://arrivelah2.busrouter.sg/?id=28009").then(i=>i.json()).then(i=>{i.services.forEach(t=>{[334,506,66,993].includes(+t.no)&&(e.innerHTML+=`
+const d=document.getElementById("int");await fetch("https://arrivelah2.busrouter.sg/?id=28009").then(i=>i.json()).then(i=>{i.services.forEach(t=>{[334,506,66,993].includes(+t.no)&&(d.innerHTML+=`
       <tr>
         <td>${t.no}</td>
         <td>${t.next?.time?t.next.time.slice(11,16):""}</td>
